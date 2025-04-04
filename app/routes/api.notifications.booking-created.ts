@@ -40,16 +40,10 @@ export async function action({ request }: ActionFunctionArgs) {
 
   try {
     const data = await request.json();
-    const { notificationType, email, name, userId, bookingDetails } = data;
+    const { notificationType, email, name, userId, bookingDetails, additionalInfo } = data;
     
-    console.log("Received notification request:", {
-      type: notificationType,
-      email,
-      name,
-      userId,
-      bookingDetails
-    });
-
+    console.log("Received notification request:", data);
+    
     // Validate the data
     if (!email || !name || !notificationType) {
       return json({ error: "Missing required fields" }, { status: 400 });
@@ -73,6 +67,7 @@ export async function action({ request }: ActionFunctionArgs) {
       name,
       userId,
       bookingDetails,
+      additionalInfo,
       timestamp: new Date().toISOString()
     }, {
       attempts: 3,

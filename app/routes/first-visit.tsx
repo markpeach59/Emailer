@@ -15,7 +15,15 @@ export async function action({ request }: ActionFunctionArgs) {
     name, 
     email, 
     userId: 1,
-    bookingDetails: "First visit details" 
+    bookingDetails: "First visit details" ,
+    additionalInfo: {
+      welcomeMessage: "Welcome to our booking system!",
+      preparationTips: [
+        "Make sure to arrive 10 minutes early",
+        "Bring your confirmation ID",
+        "Check our FAQs for more information"
+      ]
+    }
   };
 
   console.log("Submitting to API:", submissionData);
