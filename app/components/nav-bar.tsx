@@ -15,6 +15,7 @@ export function NavBar() {
             <li><Link to="/dashboard" className="text-foreground hover:text-primary">Dashboard</Link></li>
             <li><Link to="/reschedule" className="text-foreground hover:text-primary">Reschedule</Link></li>
             <li><Link to="/cancellation" className="text-foreground hover:text-primary">Cancel</Link></li>
+            <li><Link to="/first-visit" className="text-foreground hover:text-primary">First Visit</Link></li>
           </SignedIn>
         </ul>
         <div className="flex items-center space-x-4">
